@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Libraria | Ebook Store</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="logo">Libra<span>ria.</span></div>
+
+        <input type="checkbox" id="menu-toggle">
+        <label for="menu-toggle" class="burger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+
+        <ul class="nav-menu">
+            <li><a href="#beranda">Beranda</a></li>
+            <li><a href="#populer">Populer</a></li>
+            <li><a href="#kontak">Kontak</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero" id="beranda">
+        <div class="hero-text">
+            <h1>Baca Ebook Favoritmu Tanpa Batas</h1>
+            <p>Temukan berbagai ebook menarik dari banyak genre yang bisa kamu baca.
+            <p>Cerdas. Cepat. Digital.</p>
+            <a href="#populer" class="btn-primary">Jelajahi Sekarang</a>
+        </div>
+        <div class="hero-img">
+            <img src="asset/Education.png" alt="Hero Ebook">
+        </div>
+    </section>
+
+    <section class="kategori" id="populer">
+        <h2>E-Book Terpopuler</h2>
+        <div class="grid-buku">
+
+            <div class="card">
+                <img src="asset/terdidik.jpg" alt="Buku" class="terdidik">
+                <h3>Terdidik (Educated)</h3><br>
+                <a href="detail1.html" class="btn-outline">Lihat Detail</a>
+            </div>
+
+            <div class="card">
+                <img src="asset/penjara ke penjara.jpg" alt="Buku" class="penjara">
+                <h3>Dari Penjara ke Penjara</h3><br>
+                <a href="detail2.html" class="btn-outline">Lihat Detail</a>
+            </div>
+
+            <div class="card">
+                <img src="asset/all tomorrow.jpg" alt="Buku" class="tomorrow">
+                <h3>All Tomorrows</h3><br>
+                <a href="detail3.html" class="btn-outline">Lihat Detail</a>
+            </div>
+
+            <div class="card">
+                <img src="asset/ikigai2.jpg" alt="Buku" class="ikigai">
+                <h3>Ikigai Journey</h3><br>
+                <a href="detail4.html" class="btn-outline">Lihat Detail</a>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="kontak" id="kontak">
+        <div class="kontak-wrapper">
+
+            <div class="kontak-info">
+                <h2>Hubungi Kami</h2>
+                <p>Silakan hubungi kami melalui informasi berikut atau kirim pesan melalui Sosial Media yang tertera.
+                </p>
+
+                <div class="info-item">
+                    <strong>Email</strong>
+                    <span>support@libraria.com</span>
+                </div>
+
+                <div class="info-item">
+                    <strong>No. Telepon</strong>
+                    <span>+62 812 3456 7890</span>
+                </div>
+
+                <div class="info-item">
+                    <strong>Sosial Media</strong>
+                    <span>@libraria.ebook</span>
+                </div>
+            </div>
+
+            <div class="Kontak_logo">
+                <div class="logo_kontak">Libra<span>ria.</span></div>
+            </div>
+
+        </div>
+    </section>
+
+    <script>
+        const sections = document.querySelectorAll("section");
+        const navLinks = document.querySelectorAll(".navbar ul li a");
+
+        window.addEventListener("scroll", () => {
+            let current = "";
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 120;
+                if (window.scrollY >= sectionTop) {
+                    current = section.getAttribute("id");
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove("active");
+                if (link.getAttribute("href") === "#" + current) {
+                    link.classList.add("active");
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>
